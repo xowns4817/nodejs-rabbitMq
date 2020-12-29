@@ -11,6 +11,12 @@
  - rabbitmq 서버 띄운 뒤, localhost:15672 접속
  - 초기 계정 guest/guest
 
-#### [ 코드 설명 ]
- - rabbitMq_sender.js : "hello"라는 queue에 "hello world"라는 메시지 send ( gui 페이지에서 확인 가능 )
- - rabbitMq_receiver.js : "hello"라는 queue에서 msg를 뺀다. -> "hello world" 출력
+#### [RabbitMq tutorial ]
+ - 위 공식 문서를 보면 다음 6가지 카테고리로 RabbitMq의 기능을 설명하고 있다.
+ 1. Hello World : 메시지 큐의 기본 구조인 Producer -> Message Queue -> Comsumer 구조를 설명하고 있다.
+ 2. Work queues : Consumer가 여러개 일 경우 RabbitMq는 default로 Round-Robin 방식의 로드벨런싱을 지원한다. ( comsumer 여러개 띄워놓고 producer에서 메시지를 보내보면 알 수 있다.) 또한, 특정 consumer로 트래픽이 몰리는 것을 방지하기 위한 기능도 제공한다.(channel.prefetch(1); 이렇게 설정하면 된다고 하는데 좀 더 봐야 할듯..)
+ 3. Publish/Subscribe :  RabbitMq에서 pub/sub 모델을 지원한다. 
+ 4. Routing 
+ 5. Topics
+ 6. RPC
+
